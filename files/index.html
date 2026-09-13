@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreshBite — Street Food, Delivered</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+        <div class="logo">FreshBite<span class="logo-dot">.</span></div>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#restaurants">Restaurants</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#checkout">Checkout</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#account">Account</a></li>
+                <li><a href="#cart" class="cart-pill">Cart <span id="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- ================= HOME SECTION ================= -->
+
+    <section id="home" class="hero">
+        <div class="hero-copy">
+            <p class="hero-kicker">Now delivering across the city</p>
+            <h1>Good food finds<br>its way to you.</h1>
+            <p class="hero-sub">
+                Order from the kitchens people actually talk about —
+                burgers, wood-fired pizza, biryani and more, on your table
+                in under 35 minutes.
+            </p>
+            <div class="hero-actions">
+                <button class="btn-primary" onclick="showMessage()">See the menu</button>
+                <a href="#restaurants" class="hero-link">Browse restaurants →</a>
+            </div>
+            <div class="hero-stats">
+                <div><strong>120+</strong><span>kitchens</span></div>
+                <div><strong>4.7</strong><span>avg. rating</span></div>
+                <div><strong>28 min</strong><span>avg. delivery</span></div>
+            </div>
+        </div>
+
+        <div class="hero-collage" aria-hidden="true">
+            <img src="images/burger.jpg" alt="" class="collage-item item-burger">
+            <img src="images/pizza.jpg" alt="" class="collage-item item-pizza">
+            <img src="images/biryani.jpg" alt="" class="collage-item item-biryani">
+            <div class="collage-badge">
+                <span class="badge-num">25</span>
+                <span class="badge-label">min<br>average</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= RESTAURANTS SECTION ================= -->
+
+    <section id="restaurants">
+        <p class="section-kicker">Where it comes from</p>
+        <h2>Popular restaurants</h2>
+
+        <div class="restaurant-container">
+
+            <div class="restaurant-card" style="--accent:#E8532B">
+                <div class="restaurant-emoji">🍔</div>
+                <h3>Burger House</h3>
+                <p>Delicious burgers and tasty snacks.</p>
+                <div class="restaurant-meta">
+                    <span class="rating">4.5 <i>★</i></span>
+                    <span class="dot-sep">·</span>
+                    <span>25 min</span>
+                </div>
+            </div>
+
+            <div class="restaurant-card" style="--accent:#F4A73B">
+                <div class="restaurant-emoji">🍕</div>
+                <h3>Pizza Corner</h3>
+                <p>Fresh and cheesy pizzas for everyone.</p>
+                <div class="restaurant-meta">
+                    <span class="rating">4.7 <i>★</i></span>
+                    <span class="dot-sep">·</span>
+                    <span>30 min</span>
+                </div>
+            </div>
+
+            <div class="restaurant-card" style="--accent:#5B7A52">
+                <div class="restaurant-emoji">🍛</div>
+                <h3>Food Paradise</h3>
+                <p>Indian meals full of taste and flavour.</p>
+                <div class="restaurant-meta">
+                    <span class="rating">4.6 <i>★</i></span>
+                    <span class="dot-sep">·</span>
+                    <span>35 min</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= MENU SECTION ================= -->
+
+    <section id="menu">
+        <p class="section-kicker">Today's picks</p>
+        <h2>Popular menu</h2>
+
+        <div class="menu-container">
+
+            <!-- Pizza Card -->
+            <div class="menu-card">
+                <div class="menu-img-wrap">
+                    <img src="images/pizza.jpg" alt="Margherita Pizza">
+                    <span class="price-tag">₹299</span>
+                </div>
+
+                <div class="food-details">
+                    <h3>Margherita Pizza</h3>
+
+                    <p>
+                        Fresh cheese pizza with delicious tomato sauce.
+                    </p>
+
+                    <button onclick="addToCart('Margherita Pizza', 299)">
+                        Add to cart
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Burger Card -->
+            <div class="menu-card">
+                <div class="menu-img-wrap">
+                    <img src="images/burger.jpg" alt="Chicken Burger">
+                    <span class="price-tag">₹199</span>
+                </div>
+
+                <div class="food-details">
+                    <h3>Chicken Burger</h3>
+
+                    <p>
+                        Juicy chicken burger with fresh vegetables.
+                    </p>
+
+                    <button onclick="addToCart('Chicken Burger', 199)">
+                        Add to cart
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Biryani Card -->
+            <div class="menu-card">
+                <div class="menu-img-wrap">
+                    <img src="images/biryani.jpg" alt="Veg Biryani">
+                    <span class="price-tag">₹249</span>
+                </div>
+
+                <div class="food-details">
+                    <h3>Veg Biryani</h3>
+
+                    <p>
+                        Spicy and flavourful biryani with fresh vegetables.
+                    </p>
+
+                    <button onclick="addToCart('Veg Biryani', 249)">
+                        Add to cart
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= CART SECTION ================= -->
+
+    <section id="cart">
+        <p class="section-kicker">Order summary</p>
+        <h2>Your cart</h2>
+
+        <div class="receipt">
+            <div id="cart-items">
+                <p class="empty-cart">Your cart is empty — go grab something good.</p>
+            </div>
+
+            <div class="receipt-divider"></div>
+
+            <h3 id="cart-total">Total: ₹0</h3>
+
+            <button class="order-btn" onclick="checkout()">
+                Proceed to checkout
+            </button>
+        </div>
+    </section>
+
+
+    <!-- ================= CHECKOUT SECTION ================= -->
+
+    <section id="checkout">
+        <p class="section-kicker">Almost there</p>
+        <h2>Checkout</h2>
+
+        <form id="checkout-form" onsubmit="placeOrder(event)">
+
+            <label class="field">
+                <span>Full name</span>
+                <input type="text" id="customer-name" placeholder="Enter your full name" required>
+            </label>
+
+            <label class="field">
+                <span>Phone number</span>
+                <input type="tel" id="customer-phone" placeholder="Enter your phone number" required>
+            </label>
+
+            <label class="field">
+                <span>Delivery address</span>
+                <textarea id="customer-address" placeholder="Enter your delivery address" rows="4" required></textarea>
+            </label>
+
+            <label class="field">
+                <span>Payment method</span>
+                <select id="payment-method" required>
+                    <option value="">Select payment method</option>
+                    <option value="Cash on Delivery">Cash on Delivery</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Debit/Credit Card">Debit/Credit Card</option>
+                </select>
+            </label>
+
+            <button type="submit" class="btn-primary btn-full">
+                Place order
+            </button>
+
+        </form>
+    </section>
+
+
+    <!-- ================= ABOUT US SECTION ================= -->
+
+    <section id="about">
+        <p class="section-kicker">Why FreshBite</p>
+        <h2>Food that shows up right.</h2>
+
+        <p class="about-lede">
+            FreshBite connects you with kitchens worth ordering from —
+            browse menus, track your food, and get it while it's still hot.
+        </p>
+
+        <div class="about-container">
+
+            <div class="about-card">
+                <span class="about-icon">🍎</span>
+                <h3>Fresh food</h3>
+                <p>
+                    We focus on tasty, fresh, and quality ingredients.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <span class="about-icon">🚴</span>
+                <h3>Fast delivery</h3>
+                <p>
+                    Quick, careful delivery so nothing arrives cold.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <span class="about-icon">📱</span>
+                <h3>Easy ordering</h3>
+                <p>
+                    Browse menus and order food in a few taps.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= CONTACT SECTION ================= -->
+
+    <section id="contact">
+        <p class="section-kicker">Talk to us</p>
+        <h2>Contact us</h2>
+
+        <p class="section-lede">Have a question? Send us a message.</p>
+
+        <form id="contact-form" onsubmit="submitContact(event)">
+
+            <label class="field">
+                <span>Your name</span>
+                <input type="text" id="contact-name" placeholder="Your name" required>
+            </label>
+
+            <label class="field">
+                <span>Your email</span>
+                <input type="email" id="contact-email" placeholder="Your email" required>
+            </label>
+
+            <label class="field">
+                <span>Message</span>
+                <textarea id="contact-message" placeholder="Write your message" rows="5" required></textarea>
+            </label>
+
+            <button type="submit" class="btn-primary btn-full">
+                Send message
+            </button>
+
+        </form>
+    </section>
+
+
+    <!-- ================= ACCOUNT SECTION ================= -->
+
+    <section id="account">
+        <p class="section-kicker">Your account</p>
+        <h2>Login or register</h2>
+
+        <div class="account-container">
+
+            <!-- Login Form -->
+            <form id="login-form" onsubmit="loginUser(event)">
+
+                <h3>Login</h3>
+
+                <label class="field">
+                    <span>Email</span>
+                    <input type="email" id="login-email" placeholder="Enter your email" required>
+                </label>
+
+                <label class="field">
+                    <span>Password</span>
+                    <input type="password" id="login-password" placeholder="Enter your password" required>
+                </label>
+
+                <button type="submit" class="btn-primary btn-full">
+                    Login
+                </button>
+
+            </form>
+
+
+            <!-- Register Form -->
+            <form id="register-form" onsubmit="registerUser(event)">
+
+                <h3>Register</h3>
+
+                <label class="field">
+                    <span>Name</span>
+                    <input type="text" id="register-name" placeholder="Enter your name" required>
+                </label>
+
+                <label class="field">
+                    <span>Email</span>
+                    <input type="email" id="register-email" placeholder="Enter your email" required>
+                </label>
+
+                <label class="field">
+                    <span>Password</span>
+                    <input type="password" id="register-password" placeholder="Create a password" required>
+                </label>
+
+                <button type="submit" class="btn-primary btn-full">
+                    Register
+                </button>
+
+            </form>
+
+        </div>
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+        <div class="footer-logo">FreshBite<span class="logo-dot">.</span></div>
+        <p>
+            © 2026 FreshBite. All rights reserved.
+        </p>
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
